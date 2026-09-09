@@ -254,6 +254,13 @@ async def root():
 # ROTAS PARA PÁGINAS HTML (fallback para navegação SPA)
 # ============================================================
 
+@app.get("/glossario.html")
+@app.get("/glossario")
+async def serve_glossario():
+    """Serve o glossário também a partir da página inicial na raiz."""
+    return FileResponse(str(frontend_path / "html" / "glossario.html"))
+
+
 @app.get("/respostas.html")
 @app.get("/respostas")
 async def serve_respostas():
