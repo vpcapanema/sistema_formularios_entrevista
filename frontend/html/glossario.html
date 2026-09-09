@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Glossário — Formulário de Entrevistas com Embarcadores</title>
+<link rel="stylesheet" href="../css/index.css?v=20251212">
+<link rel="stylesheet" href="../css/validation.css?v=20251212">
+<link rel="stylesheet" href="../css/pages.css?v=20251212">
+<style>
+.glossary { --gl-primary:var(--primary-color);--gl-accent:var(--secondary-color);--gl-text:var(--text-primary);--gl-surface:var(--card-bg);--gl-border:var(--border-color);--gl-radius:8px; }
+
+/* Componentes do glossário: cores e fontes vêm do tema da aplicação. */
+body.glossary-page { display:block; width:auto; height:auto; min-height:100vh; overflow:auto; margin:0; padding:0; }
+.glossary { box-sizing:border-box; width:calc(100% - 2rem); max-width:1120px; margin:2rem auto; padding:0; line-height:1.65; color:var(--gl-text); }
+.glossary *, .glossary *::before, .glossary *::after { box-sizing:border-box; }
+.glossary .gl-heading { padding:1.5rem 0; margin:0 0 1.5rem; border-bottom:3px solid var(--gl-accent); background:none; text-align:left; }
+.glossary .gl-brand { margin:0 0 .5rem; color:var(--gl-primary); font-weight:700; letter-spacing:.04em; }
+.glossary h1 { color:var(--gl-primary); font-size:clamp(1.6rem,4vw,2.25rem); line-height:1.2; margin:.5rem 0 1rem; text-align:left; }
+.glossary h2 { color:var(--gl-primary); font-size:1.15rem; line-height:1.4; margin:0 0 1rem; padding:0; border:0; text-align:left; }
+.glossary a { color:var(--gl-primary); text-decoration:underline; text-underline-offset:3px; }
+.glossary .gl-layout { display:grid; grid-template-columns:260px minmax(0,1fr); gap:1.5rem; align-items:start; }
+.glossary .gl-sidebar { position:sticky; top:1rem; background:var(--gl-surface); border:1px solid var(--gl-border); border-radius:var(--gl-radius); padding:1rem; min-width:0; }
+.glossary .gl-search { margin:0 0 1rem; display:block; }
+.glossary label { display:block; font-weight:600; margin:0 0 .5rem; }
+.glossary input { display:block; width:100%; min-height:44px; padding:.6rem; font:inherit; border:1px solid var(--gl-border); border-radius:4px; background:var(--gl-surface); color:var(--gl-text); }
+.glossary button { min-height:44px; padding:.5rem .8rem; margin:.6rem 0; font:inherit; cursor:pointer; background:var(--gl-primary); color:white; border:0; border-radius:4px; }
+.glossary .gl-count { font-size:.9em; margin:0; }
+.glossary summary { cursor:pointer; font-weight:700; color:var(--gl-primary); padding:.5rem 0; }
+.glossary .gl-index { max-height:50vh; overflow:auto; background:none; position:static; display:block; padding:0; margin:0; }
+.glossary .gl-index a { display:block; padding:.3rem 0; font-size:.9em; }
+.glossary .gl-group { padding:1.4rem; margin:0 0 1.25rem; background:var(--gl-surface); border:1px solid var(--gl-border); border-top:3px solid var(--gl-accent); border-radius:var(--gl-radius); box-shadow:none; }
+.glossary dl { margin:0; }
+.glossary .gl-entry { padding:1rem 0; border-top:1px solid var(--gl-border); scroll-margin-top:1.5rem; overflow-wrap:anywhere; }
+.glossary dt { font-weight:700; margin:0 0 .4rem; }
+.glossary dd { margin:0; text-align:left; }
+.glossary .gl-entry:target { outline:2px solid var(--gl-primary); outline-offset:6px; }
+.glossary :focus-visible { outline:3px solid var(--gl-primary); outline-offset:3px; }
+.glossary [hidden] { display:none !important; }
+.glossary .gl-note { font-size:.9em; margin:1.5rem 0; }
+@media(max-width:760px) { .glossary .gl-layout { grid-template-columns:minmax(0,1fr); } .glossary .gl-sidebar { position:static; } .glossary .gl-index { max-height:180px; } .glossary .gl-group { padding:1rem; } }
+@media print { .glossary .gl-sidebar, .glossary .gl-back { display:none; } .glossary .gl-layout { display:block; } .glossary .gl-entry { break-inside:avoid; } }
+
+</style>
+</head>
+<body class="glossary-page">
+<main class="glossary" id="glossario">
+  <header class="gl-heading">
+    <p class="gl-brand">Formulário de Entrevistas com Embarcadores</p>
+    <a class="gl-back" href="index.html">← Voltar à aplicação</a>
+    <h1>Glossário técnico-conceitual</h1>
+    <p>Termos e conceitos para compreender e utilizar Formulário de Entrevistas com Embarcadores.</p>
+  </header>
+  <div class="gl-layout">
+    <aside class="gl-sidebar" aria-label="Consulta ao glossário">
+      <form class="gl-search" role="search" hidden>
+        <label for="gl-search">Buscar termo ou conceito</label>
+        <input id="gl-search" type="search" autocomplete="off" aria-controls="gl-content">
+        <button type="reset">Limpar busca</button>
+        <p class="gl-count" role="status" aria-live="polite"></p>
+      </form>
+      <details open><summary>Índice de termos</summary><nav class="gl-index" aria-label="Termos"><a data-term="termo-embarcador" href="#termo-embarcador">Embarcador</a> <a data-term="termo-entrevista" href="#termo-entrevista">Entrevista</a> <a data-term="termo-responsavel-pelo-preenchimento" href="#termo-responsavel-pelo-preenchimento">Responsável pelo preenchimento</a> <a data-term="termo-empresa" href="#termo-empresa">Empresa</a> <a data-term="termo-produto-transportado" href="#termo-produto-transportado">Produto transportado</a> <a data-term="termo-origem" href="#termo-origem">Origem</a> <a data-term="termo-destino" href="#termo-destino">Destino</a> <a data-term="termo-modal-de-transporte" href="#termo-modal-de-transporte">Modal de transporte</a> <a data-term="termo-volume-transportado" href="#termo-volume-transportado">Volume transportado</a> <a data-term="termo-frequencia-de-transporte" href="#termo-frequencia-de-transporte">Frequência de transporte</a> <a data-term="termo-operacao-logistica" href="#termo-operacao-logistica">Operação logística</a> <a data-term="termo-validacao-de-preenchimento" href="#termo-validacao-de-preenchimento">Validação de preenchimento</a> <a data-term="termo-resposta" href="#termo-resposta">Resposta</a> <a data-term="termo-analise-agregada" href="#termo-analise-agregada">Análise agregada</a> <a data-term="termo-exportacao" href="#termo-exportacao">Exportação</a></nav></details>
+    </aside>
+    <div id="gl-content">
+      <p class="gl-empty" hidden>Nenhum termo encontrado. Tente outra palavra ou limpe a busca.</p>
+      <section class="gl-group"><h2>Participantes e coleta</h2><dl>
+<div class="gl-entry" id="termo-embarcador" tabindex="-1"><dt><a href="#termo-embarcador">Embarcador</a></dt><dd>Empresa que demanda o transporte de mercadorias, na origem ou no destino do fluxo pesquisado.</dd></div>
+<div class="gl-entry" id="termo-entrevista" tabindex="-1"><dt><a href="#termo-entrevista">Entrevista</a></dt><dd>Coleta estruturada das informações da empresa e de suas operações logísticas por meio do formulário.</dd></div>
+<div class="gl-entry" id="termo-responsavel-pelo-preenchimento" tabindex="-1"><dt><a href="#termo-responsavel-pelo-preenchimento">Responsável pelo preenchimento</a></dt><dd>Pessoa que registra as informações da entrevista e identifica sua participação na coleta.</dd></div>
+<div class="gl-entry" id="termo-empresa" tabindex="-1"><dt><a href="#termo-empresa">Empresa</a></dt><dd>Unidade organizacional caracterizada na pesquisa, com suas informações cadastrais e operacionais.</dd></div>
+<div class="gl-entry" id="termo-produto-transportado" tabindex="-1"><dt><a href="#termo-produto-transportado">Produto transportado</a></dt><dd>Mercadoria informada na entrevista como parte das operações de transporte da empresa.</dd></div>
+</dl></section><section class="gl-group"><h2>Fluxos logísticos</h2><dl>
+<div class="gl-entry" id="termo-origem" tabindex="-1"><dt><a href="#termo-origem">Origem</a></dt><dd>Local de início do fluxo de mercadorias informado na pesquisa.</dd></div>
+<div class="gl-entry" id="termo-destino" tabindex="-1"><dt><a href="#termo-destino">Destino</a></dt><dd>Local de recebimento das mercadorias no fluxo informado.</dd></div>
+<div class="gl-entry" id="termo-modal-de-transporte" tabindex="-1"><dt><a href="#termo-modal-de-transporte">Modal de transporte</a></dt><dd>Meio utilizado no deslocamento de mercadorias, como rodoviário, ferroviário, aquaviário ou aéreo.</dd></div>
+<div class="gl-entry" id="termo-volume-transportado" tabindex="-1"><dt><a href="#termo-volume-transportado">Volume transportado</a></dt><dd>Quantidade de mercadoria movimentada, que deve ser interpretada com sua unidade e período de referência.</dd></div>
+<div class="gl-entry" id="termo-frequencia-de-transporte" tabindex="-1"><dt><a href="#termo-frequencia-de-transporte">Frequência de transporte</a></dt><dd>Regularidade com que uma operação ou deslocamento é realizado no período informado.</dd></div>
+<div class="gl-entry" id="termo-operacao-logistica" tabindex="-1"><dt><a href="#termo-operacao-logistica">Operação logística</a></dt><dd>Conjunto de atividades de movimentação e organização do transporte de mercadorias.</dd></div>
+</dl></section><section class="gl-group"><h2>Qualidade e consulta</h2><dl>
+<div class="gl-entry" id="termo-validacao-de-preenchimento" tabindex="-1"><dt><a href="#termo-validacao-de-preenchimento">Validação de preenchimento</a></dt><dd>Verificação de campos obrigatórios, formatos e compatibilidade das informações antes do envio.</dd></div>
+<div class="gl-entry" id="termo-resposta" tabindex="-1"><dt><a href="#termo-resposta">Resposta</a></dt><dd>Conjunto de informações registrado em uma entrevista. Sua interpretação depende do contexto e do período da coleta.</dd></div>
+<div class="gl-entry" id="termo-analise-agregada" tabindex="-1"><dt><a href="#termo-analise-agregada">Análise agregada</a></dt><dd>Resumo de múltiplas respostas para descrever padrões do conjunto pesquisado.</dd></div>
+<div class="gl-entry" id="termo-exportacao" tabindex="-1"><dt><a href="#termo-exportacao">Exportação</a></dt><dd>Geração de arquivo com os dados ou resultados disponibilizados pela aplicação.</dd></div>
+</dl></section>
+      <p class="gl-note">As definições contextualizam os termos utilizados nesta aplicação. Leia os resultados junto dos filtros, unidades, períodos e regras apresentados em cada tela.</p>
+      <a href="#glossario">Voltar ao início ↑</a>
+    </div>
+  </div>
+</main>
+<script>
+
+(() => {
+  const root = document.querySelector('.glossary');
+  if (!root) return;
+  const form = root.querySelector('.gl-search');
+  const input = root.querySelector('#gl-search');
+  const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
+  const entries = Array.from(root.querySelectorAll('.gl-entry'), element => ({ element, text: normalize(element.textContent), link: root.querySelector('[data-term="' + element.id + '"]') }));
+  const filter = () => {
+    const words = normalize(input.value).trim().split(/\s+/).filter(Boolean);
+    let visible = 0;
+    entries.forEach(({element, text, link}) => { const match = words.every(word => text.includes(word)); element.hidden = !match; link.hidden = !match; if(match) visible++; });
+    root.querySelectorAll('.gl-group').forEach(group => { group.hidden = !group.querySelector('.gl-entry:not([hidden])'); });
+    root.querySelector('.gl-count').textContent = visible + ' de ' + entries.length + ' termos';
+    root.querySelector('.gl-empty').hidden = visible !== 0;
+  };
+  const reveal = () => {
+    let id; try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    if (!target || !root.contains(target)) return;
+    if (target.closest('[hidden]')) { input.value = ''; filter(); }
+    target.scrollIntoView({block:'start'});
+  };
+  form.addEventListener('submit', event => event.preventDefault());
+  form.addEventListener('reset', event => { event.preventDefault(); input.value = ''; filter(); input.focus(); });
+  input.addEventListener('input', filter);
+  window.addEventListener('hashchange', reveal);
+  form.hidden = false; filter(); reveal();
+})();
+
+</script>
+</body>
+</html>
