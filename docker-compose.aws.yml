@@ -32,6 +32,7 @@ services:
     environment:
       DATABASE_URL: postgresql://formulario_pli:${FORM_DB_PASSWORD}@db:5432/formulario_pli
       SCHEMA_NAME: formulario_embarcadores
+      POSTGRES_SSLMODE: disable
       ALLOWED_ORIGINS: https://56.125.163.194
       APP_ENV: production
       DEBUG: "false"

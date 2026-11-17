@@ -27,8 +27,7 @@ print(f"🔗 DATABASE_URL configurada: {os.getenv('DATABASE_URL', 'NÃO DEFINIDA
 # Database URL - Render PostgreSQL (PRODUÇÃO)
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://sigma_user:pzRszi7xZ4IzjehPVNdCR73DNCJ9jiq5@"
-    "dpg-d5rc90pr0fns73e2q4n0-a.oregon-postgres.render.com:5432/sigma_pli_qr53"
+    "postgresql://postgres:postgres@localhost:5432/formulario_pli"
 )
 
 # Schema name
@@ -57,7 +56,7 @@ engine = create_engine(
     # ============================================================
     connect_args={
         "options": f"-csearch_path={SCHEMA_NAME},public -c timezone=America/Sao_Paulo",
-        "sslmode": "require",          # SSL obrigatório para Render PostgreSQL
+        "sslmode": os.getenv("POSTGRES_SSLMODE", "require"),
         "connect_timeout": 10,         # Timeout de conexão
         "application_name": "PLI2050_FastAPI"  # Identificação no pg_stat_activity
     }
