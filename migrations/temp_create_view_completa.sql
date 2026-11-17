@@ -25,8 +25,6 @@ SELECT
     ent.telefone AS entrevistado_telefone,
     ent.email AS entrevistado_email,
     ent.principal AS entrevistado_principal,
-    ent.data_cadastro AS entrevistado_data_cadastro,
-    ent.data_atualizacao AS entrevistado_data_atualizacao,
     
     -- 5. DADOS DA EMPRESA (todas as colunas)
     e.tipo_empresa AS empresa_tipo,
@@ -43,8 +41,6 @@ SELECT
     e.complemento AS empresa_complemento,
     e.bairro AS empresa_bairro,
     e.cep AS empresa_cep,
-    e.data_cadastro AS empresa_data_cadastro,
-    e.data_atualizacao AS empresa_data_atualizacao,
     
     -- 6. DEMAIS CAMPOS DA TABELA PESQUISAS
     p.tipo_responsavel,

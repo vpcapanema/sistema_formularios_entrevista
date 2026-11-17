@@ -24,10 +24,10 @@ async def get_db_connection():
     """Cria conexão com o banco de dados PostgreSQL usando DATABASE_URL"""
     database_url = os.getenv(
         'DATABASE_URL',
-        'postgresql://sigma_user:pzRszi7xZ4IzjehPVNdCR73DNCJ9jiq5@'
-        'dpg-d5rc90pr0fns73e2q4n0-a.oregon-postgres.render.com:5432/sigma_pli_qr53'
+        'postgresql://postgres:postgres@localhost:5432/formulario_pli'
     )
-    return await asyncpg.connect(database_url, ssl='require')
+    ssl_mode = os.getenv('POSTGRES_SSLMODE', 'require')
+    return await asyncpg.connect(database_url, ssl=False if ssl_mode == 'disable' else 'require')
 
 
 @router.get("")
