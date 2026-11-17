@@ -16,6 +16,7 @@ npm-debug.log*
 
 # Arquivos de Ambiente - SENSÍVEL (NÃO COMMITAR)
 .env
+.env.aws
 backend-api/.env
 credencias_bd.txt
 
