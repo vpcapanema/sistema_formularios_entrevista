@@ -10,11 +10,11 @@ function navegarPara(pagina) {
     } else {
         // Fallback: abrir em nova aba (caso router não carregue)
         const urls = {
-            'formulario': './index.html',
-            'respostas': './respostas.html',
-            'analytics': './analytics.html',
-            'instrucoes': './instrucoes.html',
-            'visualizador': './visualizador_dados.html'
+            'formulario': './',
+            'respostas': './respostas',
+            'analytics': './analytics',
+            'instrucoes': './instrucoes',
+            'visualizador': './visualizador'
         };
         
         const url = urls[pagina];

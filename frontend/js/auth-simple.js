@@ -327,7 +327,7 @@ class SimpleAuth {
         const currentPage = this.getCurrentPage();
         if (this.protectedPages.includes(currentPage) && !this.isAuthenticated()) {
             alert('⚠️ Acesso negado! Esta página requer autenticação.');
-            window.location.href = './index.html';
+            window.location.href = './';
         }
     }
     
