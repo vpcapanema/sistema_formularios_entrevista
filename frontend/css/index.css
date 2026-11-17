@@ -142,14 +142,14 @@ body {
 
 /* Hero padrao das aplicacoes SIGMA-PLI. */
 .page-header.page-hero {
-  width: min(1400px, calc(100vw - 2rem));
+  width: min(1400px, calc(100vw - 32px));
   max-width: none;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin: 0 auto 1.5rem;
-  min-height: 9rem;
-  padding: 1.5rem;
+  margin: 0 auto 24px;
+  min-height: 144px;
+  padding: 24px;
   background: linear-gradient(135deg, #003b5a 0%, #1c3d59 60%, #116593 100%);
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0,0,0,.08);
@@ -160,12 +160,12 @@ body {
   justify-content: center;
 }
 .page.active > .container { padding-top:45px; }
-.page-header.page-hero h2 { display:flex; align-items:center; justify-content:center; gap:.6rem; margin:0 0 .35rem; color:#fff; font-family:"Segoe UI","Aptos","Helvetica Neue",Arial,sans-serif; font-size:1.5rem; font-weight:700; line-height:1.55; }
-.page-header.page-hero p { margin:0; color:#fff; font-family:"Segoe UI","Aptos","Helvetica Neue",Arial,sans-serif; font-size:.84rem; line-height:1.55; }
-.page-hero__icon { display:inline-flex; align-items:center; justify-content:center; color:#3ec26e; font-size:1.5rem; line-height:1; }
+.page-header.page-hero h2 { display:flex; align-items:center; justify-content:center; gap:9.6px; margin:0 0 5.6px; color:#fff; font-family:"Segoe UI","Aptos","Helvetica Neue",Arial,sans-serif; font-size:24px; font-weight:700; line-height:1.55; }
+.page-header.page-hero p { margin:0; color:#fff; font-family:"Segoe UI","Aptos","Helvetica Neue",Arial,sans-serif; font-size:13.44px; line-height:1.55; }
+.page-hero__icon { display:inline-flex; align-items:center; justify-content:center; color:#3ec26e; font-size:24px; line-height:1; }
 .page-hero__icon svg { width:1em; height:1em; fill:currentColor; }
-.page-hero__badge { display:block; margin-top:.2rem; padding:0; border:0; border-radius:0; background:none; color:#fff; font-family:"Segoe UI","Aptos","Helvetica Neue",Arial,sans-serif; font-size:.84rem; font-weight:600; line-height:1.55; letter-spacing:.025em; }
-@media (max-width:768px) { .page-header.page-hero h2 { font-size:1.15rem; } }
+.page-hero__badge { display:block; margin-top:3.2px; padding:0; border:0; border-radius:0; background:none; color:#fff; font-family:"Segoe UI","Aptos","Helvetica Neue",Arial,sans-serif; font-size:13.44px; font-weight:600; line-height:1.55; letter-spacing:.336px; }
+@media (max-width:768px) { .page-header.page-hero h2 { font-size:18.4px; } }
 
 /* Sistema de navegação entre páginas */
 .page {
