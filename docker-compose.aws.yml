@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: pli_formularios_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: formulario_pli
+      POSTGRES_USER: formulario_pli
+      POSTGRES_PASSWORD: ${FORM_DB_PASSWORD}
+      TZ: America/Sao_Paulo
+    volumes:
+      - formulario_db_data:/var/lib/postgresql/data
+      - ./sql/database_schema_completo.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U formulario_pli -d formulario_pli"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    mem_limit: 512m
+    cpus: 0.50
+    networks: [formulario]
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pli_formularios_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://formulario_pli:${FORM_DB_PASSWORD}@db:5432/formulario_pli
+      SCHEMA_NAME: formulario_embarcadores
+      ALLOWED_ORIGINS: https://56.125.163.194
+      APP_ENV: production
+      DEBUG: "false"
+      LOG_LEVEL: info
+    ports:
+      - "127.0.0.1:8099:8000"
+    mem_limit: 512m
+    cpus: 1.00
+    networks: [formulario]
+
+networks:
+  formulario:
+
+volumes:
+  formulario_db_data:

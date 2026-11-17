@@ -26,6 +26,11 @@ const CoreAPI = {
     get BASE_URL() {
         // Auto-detecção: produção (GitHub Pages/Render) ou desenvolvimento (localhost)
         const hostname = window.location.hostname;
+        const awsPrefix = '/sigma-apps/formulario-embarcadores';
+
+        if (window.location.pathname.startsWith(awsPrefix)) {
+            return `${window.location.origin}${awsPrefix}`;
+        }
         
         if (hostname.includes('github.io') || hostname.includes('onrender.com')) {
             // ✅ URL do backend em produção (Render.com)
