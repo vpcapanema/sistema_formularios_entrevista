@@ -142,11 +142,11 @@ body {
 
 /* Hero padrao das aplicacoes SIGMA-PLI. */
 .page-header.page-hero {
-  width: min(1400px, calc(100vw - 32px));
-  max-width: none;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  max-width: 100%;
+  position: static;
+  left: auto;
+  transform: none;
   margin: 0 auto 24px;
   min-height: 144px;
   padding: 24px;
