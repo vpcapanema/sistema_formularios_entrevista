@@ -62,6 +62,7 @@ COPY --chown=appuser:appuser backend-fastapi ./backend-fastapi
 
 # Copiar frontend para dentro da imagem (se existir no repositório)
 COPY --chown=appuser:appuser frontend ./frontend
+COPY --chown=appuser:appuser migrations ./migrations
 
 # Garantir que o pacote `app` esteja disponível no top-level import path
 # para que imports como `from app.routers.health import ...` funcionem.

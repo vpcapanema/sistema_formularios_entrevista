@@ -10,7 +10,6 @@ services:
       TZ: America/Sao_Paulo
     volumes:
       - formulario_db_data:/var/lib/postgresql/data
-      - ./sql/database_schema_completo.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U formulario_pli -d formulario_pli"]
       interval: 10s
@@ -37,6 +36,10 @@ services:
       APP_ENV: production
       DEBUG: "false"
       LOG_LEVEL: info
+    command:
+      - sh
+      - -c
+      - python backend-fastapi/init_database.py && exec uvicorn backend-fastapi.main:app --host 0.0.0.0 --port 8000 --workers 1 --log-level info
     ports:
       - "127.0.0.1:8099:8000"
     mem_limit: 512m
