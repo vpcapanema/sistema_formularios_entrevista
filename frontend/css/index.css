@@ -142,26 +142,23 @@ body {
 
 /* Hero padrao das aplicacoes SIGMA-PLI. */
 .page-header.page-hero {
-  padding: 48px 32px;
+  min-height: 9rem;
+  padding: 1.5rem;
   background: linear-gradient(135deg, #003b5a 0%, #1c3d59 60%, #116593 100%);
-  border-radius: 16px;
-  box-shadow: 0 12px 28px rgba(28, 61, 89, 0.22);
-  position: relative;
-  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.page-header.page-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 70% 40%, rgba(62, 194, 110, 0.12) 0%, transparent 60%);
-  pointer-events: none;
-}
-.page-header.page-hero > * { position: relative; }
-.page-header.page-hero h2 { color: #fff; font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: .5rem; }
-.page-header.page-hero p { color: rgba(255,255,255,.82); }
-.page-hero__icon { width: 64px; height: 64px; background: rgba(255,255,255,.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-.page-hero__icon svg { width: 34px; height: 34px; fill: #3ec26e; }
-.page-hero__badge { display: inline-flex; margin-top: 12px; background: rgba(62,194,110,.18); border: 1px solid rgba(62,194,110,.4); color: #3ec26e; border-radius: 100px; padding: 4px 14px; font-size: .9rem; font-weight: 600; }
+.page-header.page-hero h2 { display:flex; align-items:center; justify-content:center; gap:.6rem; margin:0 0 .35rem; color:#fff; font-family:"Segoe UI","Aptos","Helvetica Neue",Arial,sans-serif; font-size:1.5rem; font-weight:700; line-height:1.55; }
+.page-header.page-hero p { margin:0; color:#fff; font-family:"Segoe UI","Aptos","Helvetica Neue",Arial,sans-serif; font-size:.84rem; line-height:1.55; }
+.page-hero__icon { display:inline-flex; align-items:center; justify-content:center; color:#3ec26e; font-size:1.5rem; line-height:1; }
+.page-hero__icon svg { width:1em; height:1em; fill:currentColor; }
+.page-hero__badge { display:block; margin-top:.2rem; padding:0; border:0; border-radius:0; background:none; color:#fff; font-family:"Segoe UI","Aptos","Helvetica Neue",Arial,sans-serif; font-size:.84rem; font-weight:600; line-height:1.55; letter-spacing:.025em; }
+@media (max-width:768px) { .page-header.page-hero h2 { font-size:1.15rem; } }
 
 /* Sistema de navegação entre páginas */
 .page {
